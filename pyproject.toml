@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "music-gen-experiment"
+version = "0.1.0"
+description = ""
+authors = ["Gregory Horvath <gphorvath@gameshenanigans.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+audiocraft = "^0.0.1"
+triton = "^2.0.0.post1"
+uvicorn = "^0.22.0"
+fastapi = "^0.97.0"
+cuda-python = "^12.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.5.1"]
+build-backend = "poetry.core.masonry.api"
