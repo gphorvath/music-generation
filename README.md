@@ -10,7 +10,13 @@
 ## Setup
 
 * Ensure you have the above dependencies squared away (nvidia drivers are always fun to setup...)
-* `poetry install`
+
+``` shell
+# Configure Poetry Virtual Environment
+poetry config virtualenvs.in-project true
+
+poetry install
+```
 
 ### Run Locally
 
@@ -26,6 +32,8 @@ Now navigate to `http://localhost:8000/docs` to verify it works.
 ### Docker
 
 ``` shell
+docker builder prune
+
 docker build . -t music-gen:0.1
 
 docker run -it --rm -p 5000:5000 --gpus all music-gen:0.1
