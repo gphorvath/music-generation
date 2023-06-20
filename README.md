@@ -27,7 +27,7 @@ poetry shell # Opens a shell in the Poetry Virtual Environment
 uvicorn main:app --reload # Starts the server
 ```
 
-Now navigate to `http://localhost:8000/docs` to verify it works.
+Navigate to `http://localhost:8000/docs` to verify it works.
 
 ### Docker
 
@@ -38,3 +38,5 @@ docker build . -t music-gen:0.1
 
 docker run -it --rm -p 5000:5000 --gpus all music-gen:0.1
 ```
+
+Navigate to `http://localhost:5000/docs` to verify it works.
