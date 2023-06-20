@@ -12,8 +12,7 @@ app = FastAPI()
 os.makedirs('audio', exist_ok=True)
 
 @app.post("/generate")
-async def generate(prompt: str):
-    duration=10
+async def generate(prompt: str, duration: int):
     save_directory = "./audio/"
     model_id = 'medium'
 
@@ -29,3 +28,7 @@ async def generate(prompt: str):
     
     # return the path to the first file generated
     return FileResponse(f'./audio/{filename}', media_type='audio/wav')
+
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}
