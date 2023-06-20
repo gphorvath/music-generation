@@ -1,5 +1,9 @@
 # Music Gen Experiment
 
+## Description
+
+A dockerized version of [facebook/MusicGen](https://huggingface.co/spaces/facebook/MusicGen) that uses Poetry, FastAPI, and Uvicorn.
+
 ## Dependencies
 
 * Cuda version 12
