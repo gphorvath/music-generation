@@ -7,6 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.97.0"
+audiocraft = "^0.0.1"
+uvicorn = {extras = ["standard"], version = "^0.23.0"}
 torch = [
     {url = "https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl", platform = "linux", python = ">=3.10 <3.11"},
 ]
@@ -15,9 +18,10 @@ torchaudio = [
 ]
 #triton = "^2.0.0"
 #cuda-python = "^12.1.0"
-fastapi = "^0.97.0"
-audiocraft = "^0.0.1"
-uvicorn = "^0.22.0"
+transformers = "^4.31"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.24.0"
 
 [build-system]
 requires = ["poetry-core>=1.5.1"]

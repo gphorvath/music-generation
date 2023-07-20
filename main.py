@@ -12,19 +12,22 @@ app = FastAPI()
 os.makedirs('audio', exist_ok=True)
 
 @app.post("/generate")
-async def generate(prompt: str, duration: int):
+async def generate(prompt: str, duration: float):
     save_directory = "./audio/"
     model_id = 'medium'
 
     model = MusicGen.get_pretrained(model_id)
     model.set_generation_params(duration)
 
-    wav = model.generate([prompt]) 
+    wav = model.generate(prompt) 
 
-    for idx, one_wav in enumerate(wav):
-        # Will save under {idx}.wav, with loudness normalization at -14 db LUFS.
-        filename = f'{idx}.wav'
-        audio_write(filename, one_wav.cpu(), model.sample_rate, strategy="loudness")
+    # Will save under {idx}.wav, with loudness normalization at -14 db LUFS.
+    # ct stores current time
+    ct = datetime.datetime.now()
+    print("current time:-", ct)
+    #filename = f'{idx}.wav'
+    filename = '{ct}.wav'
+    audio_write(filename, wav.cpu(), model.sample_rate, strategy="loudness")
     
     # return the path to the first file generated
     return FileResponse(f'./audio/{filename}', media_type='audio/wav')

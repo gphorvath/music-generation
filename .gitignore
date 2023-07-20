@@ -161,3 +161,7 @@ cython_debug/
 
 # Generated Images
 images/*
+audio/*
+
+# Cached Models
+models/*
