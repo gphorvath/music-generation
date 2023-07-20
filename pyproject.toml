@@ -6,7 +6,7 @@ authors = ["Gregory Horvath <gphorvath@gameshenanigans.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.10,<3.13"
 fastapi = "^0.97.0"
 audiocraft = "^0.0.1"
 uvicorn = {extras = ["standard"], version = "^0.23.0"}
@@ -19,6 +19,8 @@ torchaudio = [
 #triton = "^2.0.0"
 #cuda-python = "^12.1.0"
 transformers = "^4.31"
+scipy = "^1.11.1"
+
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.24.0"
