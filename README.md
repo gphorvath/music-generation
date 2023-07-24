@@ -33,7 +33,13 @@ uvicorn main:app --reload # Starts the server
 
 Navigate to `http://localhost:8000/docs` to verify it works.
 
-### Docker
+### Jupyter Notebook
+
+The `testbed.ipynb` gives you everything you need to test drive the API.
+
+## Docker
+
+> Probably not working yet.
 
 ``` shell
 docker builder prune
