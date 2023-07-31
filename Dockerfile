@@ -39,8 +39,12 @@ COPY --chown=${USER}:${USER} pyproject.toml poetry.lock ${WORKPATH}/
 # Install the dependencies
 RUN $POETRY_HOME/bin/poetry install
 
+# Get the model
+COPY --chown=${USER}:${USER} ./get_model.py ${WORKPATH}/
+RUN python3 get_model.py
+
 # Copy the rest of your application code into the working directory
-COPY --chown=${USER}:${USER} . ${WORKPATH}/
+COPY --chown=${USER}:${USER} ./main.py ${WORKPATH}/
 
 # Publish port
 EXPOSE $UVICORN_PORT

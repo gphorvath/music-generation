@@ -39,9 +39,8 @@ The `testbed.ipynb` gives you everything you need to test drive the API.
 
 ## Docker
 
-> Probably not working yet.
-
 ``` shell
+# Make sure to periodically prune your old images (they can be large)
 docker builder prune
 
 docker build . -t music-gen:0.1

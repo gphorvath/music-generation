@@ -53,7 +53,7 @@ def audios():
     return out
 
 @app.get("/generate")
-async def generate(prompt: str, tokens: int):
+async def generate(prompt: str, tokens: int=512, temperature: float=1.0):
     inputs = processor(
         text=prompt,
         padding=True,
@@ -69,7 +69,7 @@ async def generate(prompt: str, tokens: int):
 
     tic = time.time()
 
-    audio_values = model.generate(**inputs, max_new_tokens=tokens).to(device)
+    audio_values = model.generate(**inputs, max_new_tokens=tokens, temperature=temperature).to(device)
 
     toc = time.time()
 
