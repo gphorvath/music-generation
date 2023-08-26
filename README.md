@@ -45,7 +45,7 @@ docker builder prune
 
 docker build . -t music-gen:0.1
 
-docker run -it --rm -p 5000:5000 --gpus all music-gen:0.1
+docker run -it --rm -p 5000:5000 --gpus all music-gen:0.1 # included in docker-run.sh
 ```
 
 Navigate to `http://localhost:5000/docs` to verify it works.
